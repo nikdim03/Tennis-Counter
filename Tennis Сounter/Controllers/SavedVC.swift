@@ -34,14 +34,14 @@ class SavedVC: UIViewController {
         button.setImage(UIImage(named: "cross"), for: .normal)
         button.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
         view.addSubview(button)
-        drawShit()
+        drawMatches()
     }
     
     @objc func handleTap() {
         dismiss(animated: true, completion: nil)
     }
     
-    func drawShit() {
+    func drawMatches() {
         let scrollView = UIScrollView()
         scrollView.contentSize = view.frame.size
         view.addSubview(scrollView)
