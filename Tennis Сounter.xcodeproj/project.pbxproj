@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CB517DD299CC66F00A3D6DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517DC299CC66F00A3D6DE /* AppDelegate.swift */; };
+		2CB517DF299CC66F00A3D6DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517DE299CC66F00A3D6DE /* SceneDelegate.swift */; };
+		2CB517E1299CC66F00A3D6DE /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517E0299CC66F00A3D6DE /* MainVC.swift */; };
+		2CB517E6299CC67000A3D6DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB517E5299CC67000A3D6DE /* Assets.xcassets */; };
+		2CB517E9299CC67000A3D6DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB517E7299CC67000A3D6DE /* LaunchScreen.storyboard */; };
+		2CB517F1299CD32700A3D6DE /* PASTI.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB517F0299CD32700A3D6DE /* PASTI.otf */; };
+		2CB517F3299D2A8700A3D6DE /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517F2299D2A8700A3D6DE /* ResultVC.swift */; };
+		2CB517F5299D3E8400A3D6DE /* SettVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517F4299D3E8400A3D6DE /* SettVC.swift */; };
+		2CB517F9299D4D2600A3D6DE /* HEEBO.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */; };
+		2CB517FB299E630400A3D6DE /* MatchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517FA299E630400A3D6DE /* MatchEntity.swift */; };
+		2CB517FE299E941500A3D6DE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB517FD299E941500A3D6DE /* RealmSwift */; };
+		2CB51800299EB3DF00A3D6DE /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2CB517D9299CC66F00A3D6DE /* Tennis Сounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tennis Сounter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB517DC299CC66F00A3D6DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2CB517DE299CC66F00A3D6DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2CB517E0299CC66F00A3D6DE /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		2CB517E5299CC67000A3D6DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CB517E8299CC67000A3D6DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2CB517EA299CC67000A3D6DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CB517F0299CD32700A3D6DE /* PASTI.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PASTI.otf; sourceTree = "<group>"; };
+		2CB517F2299D2A8700A3D6DE /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		2CB517F4299D3E8400A3D6DE /* SettVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettVC.swift; sourceTree = "<group>"; };
+		2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HEEBO.ttf; sourceTree = "<group>"; };
+		2CB517FA299E630400A3D6DE /* MatchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEntity.swift; sourceTree = "<group>"; };
+		2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2CB517D6299CC66F00A3D6DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB517FE299E941500A3D6DE /* RealmSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2CB517D0299CC66F00A3D6DE = {
+			isa = PBXGroup;
+			children = (
+				2CB517DB299CC66F00A3D6DE /* Tennis Сounter */,
+				2CB517F0299CD32700A3D6DE /* PASTI.otf */,
+				2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */,
+				2CB517DA299CC66F00A3D6DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2CB517DA299CC66F00A3D6DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CB517D9299CC66F00A3D6DE /* Tennis Сounter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2CB517DB299CC66F00A3D6DE /* Tennis Сounter */ = {
+			isa = PBXGroup;
+			children = (
+				2CB517DC299CC66F00A3D6DE /* AppDelegate.swift */,
+				2CB517DE299CC66F00A3D6DE /* SceneDelegate.swift */,
+				2CB517E0299CC66F00A3D6DE /* MainVC.swift */,
+				2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */,
+				2CB517F2299D2A8700A3D6DE /* ResultVC.swift */,
+				2CB517F4299D3E8400A3D6DE /* SettVC.swift */,
+				2CB517FA299E630400A3D6DE /* MatchEntity.swift */,
+				2CB517E5299CC67000A3D6DE /* Assets.xcassets */,
+				2CB517E7299CC67000A3D6DE /* LaunchScreen.storyboard */,
+				2CB517EA299CC67000A3D6DE /* Info.plist */,
+			);
+			path = "Tennis Сounter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CB517D8299CC66F00A3D6DE /* Tennis Сounter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2CB517ED299CC67000A3D6DE /* Build configuration list for PBXNativeTarget "Tennis Сounter" */;
+			buildPhases = (
+				2CB517D5299CC66F00A3D6DE /* Sources */,
+				2CB517D6299CC66F00A3D6DE /* Frameworks */,
+				2CB517D7299CC66F00A3D6DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tennis Сounter";
+			packageProductDependencies = (
+				2CB517FD299E941500A3D6DE /* RealmSwift */,
+			);
+			productName = "Tennis Сounter";
+			productReference = 2CB517D9299CC66F00A3D6DE /* Tennis Сounter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2CB517D1299CC66F00A3D6DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					2CB517D8299CC66F00A3D6DE = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 2CB517D4299CC66F00A3D6DE /* Build configuration list for PBXProject "Tennis Сounter" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2CB517D0299CC66F00A3D6DE;
+			packageReferences = (
+				2CB517FC299E941500A3D6DE /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			productRefGroup = 2CB517DA299CC66F00A3D6DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2CB517D8299CC66F00A3D6DE /* Tennis Сounter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2CB517D7299CC66F00A3D6DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB517E9299CC67000A3D6DE /* LaunchScreen.storyboard in Resources */,
+				2CB517F9299D4D2600A3D6DE /* HEEBO.ttf in Resources */,
+				2CB517F1299CD32700A3D6DE /* PASTI.otf in Resources */,
+				2CB517E6299CC67000A3D6DE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2CB517D5299CC66F00A3D6DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CB517E1299CC66F00A3D6DE /* MainVC.swift in Sources */,
+				2CB517F5299D3E8400A3D6DE /* SettVC.swift in Sources */,
+				2CB517F3299D2A8700A3D6DE /* ResultVC.swift in Sources */,
+				2CB517DD299CC66F00A3D6DE /* AppDelegate.swift in Sources */,
+				2CB51800299EB3DF00A3D6DE /* SavedVC.swift in Sources */,
+				2CB517DF299CC66F00A3D6DE /* SceneDelegate.swift in Sources */,
+				2CB517FB299E630400A3D6DE /* MatchEntity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2CB517E7299CC67000A3D6DE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CB517E8299CC67000A3D6DE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2CB517EB299CC67000A3D6DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2CB517EC299CC67000A3D6DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2CB517EE299CC67000A3D6DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J25YA2CZDR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tennis Сounter/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitriynikulin.Tennis--ounter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2CB517EF299CC67000A3D6DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J25YA2CZDR;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tennis Сounter/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitriynikulin.Tennis--ounter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2CB517D4299CC66F00A3D6DE /* Build configuration list for PBXProject "Tennis Сounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CB517EB299CC67000A3D6DE /* Debug */,
+				2CB517EC299CC67000A3D6DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2CB517ED299CC67000A3D6DE /* Build configuration list for PBXNativeTarget "Tennis Сounter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2CB517EE299CC67000A3D6DE /* Debug */,
+				2CB517EF299CC67000A3D6DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2CB517FC299E941500A3D6DE /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.36.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2CB517FD299E941500A3D6DE /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CB517FC299E941500A3D6DE /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 2CB517D1299CC66F00A3D6DE /* Project object */;
+}
