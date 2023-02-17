@@ -55,10 +55,10 @@ class MainVC: UIViewController, MainVCDelegate {
     
     var scores = [0: 0, 1: 15, 2: 30, 3: 40]
     
-    var myMatch = MatchEntity()
-    var prevMatch = MatchEntity()
-    var mySet = SetEntity()
-    var myGame = GameEntity()
+    var matchEntity = MatchEntity()
+    var prevMatchEntity = MatchEntity()
+    var setEntity = SetEntity()
+    var gameEntity = GameEntity()
     
     
     @available(iOS, deprecated: 15.0, message: "To silence the warnings")
@@ -350,12 +350,12 @@ class MainVC: UIViewController, MainVCDelegate {
             gameScore2.text = "00"
             setScore1.text = "0"
             setScore2.text = "0"
-            myMatch = MatchEntity()
+            matchEntity = MatchEntity()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time = dateFormatter.string(from: Date())
-            mySet = SetEntity()
-            myGame = GameEntity()
+            matchEntity.time = dateFormatter.string(from: Date())
+            setEntity = SetEntity()
+            gameEntity = GameEntity()
             if !isFirstTime {
                 for _ in 1...18 {
                     view.subviews[view.subviews.count - 1].removeFromSuperview()
@@ -447,12 +447,12 @@ class MainVC: UIViewController, MainVCDelegate {
             gameScore2.text = "00"
             setScore1.text = "0"
             setScore2.text = "0"
-            myMatch = MatchEntity()
+            matchEntity = MatchEntity()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time = dateFormatter.string(from: Date())
-            mySet = SetEntity()
-            myGame = GameEntity()
+            matchEntity.time = dateFormatter.string(from: Date())
+            setEntity = SetEntity()
+            gameEntity = GameEntity()
             for _ in 1...30 {
                 view.subviews[view.subviews.count - 1].removeFromSuperview()
             }
@@ -541,11 +541,11 @@ class MainVC: UIViewController, MainVCDelegate {
             curGame += 1
             player1GameScore += 1
             
-            myGame.player1GameScore = player1GameScore
-            myGame.player2GameScore = player2GameScore
-            myGame.gameInProgress = false
-            mySet.games.append(myGame)
-            myGame = GameEntity()
+            gameEntity.player1GameScore = player1GameScore
+            gameEntity.player2GameScore = player2GameScore
+            gameEntity.gameInProgress = false
+            setEntity.games.append(gameEntity)
+            gameEntity = GameEntity()
             
             player1Points = 0
             player2Points = 0
@@ -559,11 +559,11 @@ class MainVC: UIViewController, MainVCDelegate {
             curGame += 1
             player2GameScore += 1
             
-            myGame.player1GameScore = player1GameScore
-            myGame.player2GameScore = player2GameScore
-            myGame.gameInProgress = false
-            mySet.games.append(myGame)
-            myGame = GameEntity()
+            gameEntity.player1GameScore = player1GameScore
+            gameEntity.player2GameScore = player2GameScore
+            gameEntity.gameInProgress = false
+            setEntity.games.append(gameEntity)
+            gameEntity = GameEntity()
             
             player1Points = 0
             player2Points = 0
@@ -605,10 +605,10 @@ class MainVC: UIViewController, MainVCDelegate {
             curSet += 1
             player1SetScore += 1
             
-            mySet.player1SetScore = player1SetScore
-            mySet.player2SetScore = player2SetScore
-            myMatch.sets.append(mySet)
-            mySet = SetEntity()
+            setEntity.player1SetScore = player1SetScore
+            setEntity.player2SetScore = player2SetScore
+            matchEntity.sets.append(setEntity)
+            setEntity = SetEntity()
             
             player1GameScore = 0
             player2GameScore = 0
@@ -621,10 +621,10 @@ class MainVC: UIViewController, MainVCDelegate {
             curSet += 1
             player2SetScore += 1
             
-            mySet.player1SetScore = player1SetScore
-            mySet.player2SetScore = player2SetScore
-            myMatch.sets.append(mySet)
-            mySet = SetEntity()
+            setEntity.player1SetScore = player1SetScore
+            setEntity.player2SetScore = player2SetScore
+            matchEntity.sets.append(setEntity)
+            setEntity = SetEntity()
             
             player1GameScore = 0
             player2GameScore = 0
@@ -646,10 +646,10 @@ class MainVC: UIViewController, MainVCDelegate {
                 curSet += 1
                 player1SetScore += 1
                 
-                mySet.player1SetScore = player1SetScore
-                mySet.player2SetScore = player2SetScore
-                myMatch.sets.append(mySet)
-                mySet = SetEntity()
+                setEntity.player1SetScore = player1SetScore
+                setEntity.player2SetScore = player2SetScore
+                matchEntity.sets.append(setEntity)
+                setEntity = SetEntity()
                 
                 player1GameScore = 0
                 player2GameScore = 0
@@ -664,10 +664,10 @@ class MainVC: UIViewController, MainVCDelegate {
                 curSet += 1
                 player2SetScore += 1
                 
-                mySet.player1SetScore = player1SetScore
-                mySet.player2SetScore = player2SetScore
-                myMatch.sets.append(mySet)
-                mySet = SetEntity()
+                setEntity.player1SetScore = player1SetScore
+                setEntity.player2SetScore = player2SetScore
+                matchEntity.sets.append(setEntity)
+                setEntity = SetEntity()
                 
                 player1GameScore = 0
                 player2GameScore = 0
@@ -689,7 +689,7 @@ class MainVC: UIViewController, MainVCDelegate {
             nextSetButton.setTitle("SAVE MATCH", for: .normal)
             let vc = ResultVC()
             vc.delegate = self
-            vc.myMatch = myMatch
+            vc.matchEntity = matchEntity
             vc.winner = 1
             vc.totalSets = totalSets
             vc.modalPresentationStyle = .overCurrentContext
@@ -697,19 +697,19 @@ class MainVC: UIViewController, MainVCDelegate {
             
             var dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time += " - " + dateFormatter.string(from: Date())
-            prevMatch = myMatch
+            matchEntity.time += " - " + dateFormatter.string(from: Date())
+            prevMatchEntity = matchEntity
             
-            myMatch = MatchEntity()
+            matchEntity = MatchEntity()
             dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time = dateFormatter.string(from: Date())
+            matchEntity.time = dateFormatter.string(from: Date())
         } else if totalSets == curSet && player2SetScore > player1SetScore {
             // player 2 wins the match
             nextSetButton.setTitle("SAVE MATCH", for: .normal)
             let vc = ResultVC()
             vc.delegate = self
-            vc.myMatch = myMatch
+            vc.matchEntity = matchEntity
             vc.winner = 2
             vc.totalSets = totalSets
             vc.modalPresentationStyle = .overCurrentContext
@@ -717,13 +717,13 @@ class MainVC: UIViewController, MainVCDelegate {
             
             var dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time += " - " + dateFormatter.string(from: Date())
-            prevMatch = myMatch
+            matchEntity.time += " - " + dateFormatter.string(from: Date())
+            prevMatchEntity = matchEntity
             
-            myMatch = MatchEntity()
+            matchEntity = MatchEntity()
             dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "MMM d, h:mma"
-            myMatch.time = dateFormatter.string(from: Date())
+            matchEntity.time = dateFormatter.string(from: Date())
         }
     }
     
@@ -773,7 +773,7 @@ class MainVC: UIViewController, MainVCDelegate {
                 //label11
                 label = UILabel()
                 label.frame = CGRect(x: 0.05597964376 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i == curSet ? "\(player1GameScore)" : i > myMatch.sets.count ? "-" : "\(myMatch.sets[i].games.last?.player1GameScore ?? 0)"
+                label.text = i == curSet ? "\(player1GameScore)" : i > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i].games.last?.player1GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = i <= curSet ? UIColor.white : UIColor.white.withAlphaComponent(0.4)
@@ -783,7 +783,7 @@ class MainVC: UIViewController, MainVCDelegate {
                 //label12
                 label = UILabel()
                 label.frame = CGRect(x: 0.15521628498 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i == curSet ? "\(player2GameScore)" : i > myMatch.sets.count ? "-" : "\(myMatch.sets[i].games.last?.player2GameScore ?? 0)"
+                label.text = i == curSet ? "\(player2GameScore)" : i > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i].games.last?.player2GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = i <= curSet ? UIColor.white : UIColor.white.withAlphaComponent(0.4)
@@ -831,7 +831,7 @@ class MainVC: UIViewController, MainVCDelegate {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.05597964376 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i == curSet + 1 ? "\(player1GameScore)" : i - 1 > myMatch.sets.count ? "-" : "\(myMatch.sets[i - 1].games.last?.player1GameScore ?? 0)"
+                label.text = i == curSet + 1 ? "\(player1GameScore)" : i - 1 > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i - 1].games.last?.player1GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = i <= curSet + 1 ? UIColor.white : UIColor.white.withAlphaComponent(0.4)
@@ -839,7 +839,7 @@ class MainVC: UIViewController, MainVCDelegate {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.15521628498 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i == curSet + 1 ? "\(player2GameScore)" : i - 1 > myMatch.sets.count ? "-" : "\(myMatch.sets[i - 1].games.last?.player2GameScore ?? 0)"
+                label.text = i == curSet + 1 ? "\(player2GameScore)" : i - 1 > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i - 1].games.last?.player2GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = i <= curSet + 1 ? UIColor.white : UIColor.white.withAlphaComponent(0.4)
@@ -857,20 +857,20 @@ class MainVC: UIViewController, MainVCDelegate {
                     // player 1 wins the game
                     player1GameScore += 1
                     
-                    myGame.player1GameScore = player1GameScore
-                    myGame.player2GameScore = player2GameScore
-                    myGame.gameInProgress = false
-                    mySet.games.append(myGame)
-                    myGame = GameEntity()
+                    gameEntity.player1GameScore = player1GameScore
+                    gameEntity.player2GameScore = player2GameScore
+                    gameEntity.gameInProgress = false
+                    setEntity.games.append(gameEntity)
+                    gameEntity = GameEntity()
                 } else if player2Points > player1Points {
                     // player 2 wins the game
                     player2GameScore += 1
                     
-                    myGame.player1GameScore = player1GameScore
-                    myGame.player2GameScore = player2GameScore
-                    myGame.gameInProgress = false
-                    mySet.games.append(myGame)
-                    myGame = GameEntity()
+                    gameEntity.player1GameScore = player1GameScore
+                    gameEntity.player2GameScore = player2GameScore
+                    gameEntity.gameInProgress = false
+                    setEntity.games.append(gameEntity)
+                    gameEntity = GameEntity()
                 } else if player1Points == player2Points {
                     // deuce
                     player1Advantage = true
@@ -893,42 +893,44 @@ class MainVC: UIViewController, MainVCDelegate {
                 if player1GameScore > player2GameScore {
                     // player 1 wins the set
                     player1SetScore += 1
+                    curSet += 1
                     gameInProgress = false
                     setInProgress = false
                     
-                    mySet.player1SetScore = player1SetScore
-                    mySet.player2SetScore = player2SetScore
-                    myMatch.sets.append(mySet)
-                    mySet = SetEntity()
+                    setEntity.player1SetScore = player1SetScore
+                    setEntity.player2SetScore = player2SetScore
+                    matchEntity.sets.append(setEntity)
+                    setEntity = SetEntity()
                 } else if player2GameScore > player1GameScore {
                     // player 2 wins the set
                     player2SetScore += 1
+                    curSet += 1
                     gameInProgress = false
                     setInProgress = false
                     
-                    mySet.player1SetScore = player1SetScore
-                    mySet.player2SetScore = player2SetScore
-                    myMatch.sets.append(mySet)
-                    mySet = SetEntity()
+                    setEntity.player1SetScore = player1SetScore
+                    setEntity.player2SetScore = player2SetScore
+                    matchEntity.sets.append(setEntity)
+                    setEntity = SetEntity()
                 }
                 
                 // update set score labels
                 setScore1.text = "0"
                 setScore2.text = "0"
                 
-                if totalSets - 1 == curSet && player1SetScore > player2SetScore {
+                if totalSets == curSet && player1SetScore > player2SetScore {
                     // player 1 wins the match
                     nextSetButton.setTitle("SAVE MATCH", for: .normal)
                     
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MMM d, h:mma"
-                    myMatch.time += " - " + dateFormatter.string(from: Date())
-                    prevMatch = myMatch
+                    matchEntity.time += " - " + dateFormatter.string(from: Date())
+                    prevMatchEntity = matchEntity
                     
                     let vc = ResultVC()
                     vc.delegate = self
                     vc.winner = 1
-                    vc.myMatch = myMatch
+                    vc.matchEntity = matchEntity
                     vc.totalSets = totalSets
                     vc.modalPresentationStyle = .overCurrentContext
                     present(vc, animated: true, completion: nil)
@@ -938,12 +940,12 @@ class MainVC: UIViewController, MainVCDelegate {
                     
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MMM d, h:mma"
-                    myMatch.time += " - " + dateFormatter.string(from: Date())
-                    prevMatch = myMatch
+                    matchEntity.time += " - " + dateFormatter.string(from: Date())
+                    prevMatchEntity = matchEntity
                     
                     let vc = ResultVC()
                     vc.delegate = self
-                    vc.myMatch = myMatch
+                    vc.matchEntity = matchEntity
                     vc.winner = 2
                     vc.totalSets = totalSets
                     vc.modalPresentationStyle = .overCurrentContext
@@ -952,23 +954,22 @@ class MainVC: UIViewController, MainVCDelegate {
                 
                 gameScore1.text = "00"
                 gameScore2.text = "00"
-                curSet += 1
                 curGame += 1
                 player1Points = 0
                 player2Points = 0
                 player1GameScore = 0
                 player2GameScore = 0
                 redraw()
-                if totalSets == curSet && player1SetScore > player2SetScore || totalSets - 1 == curSet && player1SetScore > player2SetScore {
-                    myMatch = MatchEntity()
+                if totalSets == curSet && player1SetScore > player2SetScore || totalSets == curSet && player1SetScore > player2SetScore {
+                    matchEntity = MatchEntity()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MMM d, h:mma"
-                    myMatch.time = dateFormatter.string(from: Date())
+                    matchEntity.time = dateFormatter.string(from: Date())
                 }
             }
         } else {
             try! realm.write {
-                realm.add(prevMatch)
+                realm.add(prevMatchEntity)
             }
             nextSetButton.setTitle("NEXT SET", for: .normal)
             startOver()
@@ -1022,12 +1023,12 @@ class MainVC: UIViewController, MainVCDelegate {
         gameScore2.text = "00"
         setScore1.text = "0"
         setScore2.text = "0"
-        myMatch = MatchEntity()
+        matchEntity = MatchEntity()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, h:mma"
-        myMatch.time = dateFormatter.string(from: Date())
-        mySet = SetEntity()
-        myGame = GameEntity()
+        matchEntity.time = dateFormatter.string(from: Date())
+        setEntity = SetEntity()
+        gameEntity = GameEntity()
         redraw()
     }
     

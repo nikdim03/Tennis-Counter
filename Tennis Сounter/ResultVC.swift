@@ -14,7 +14,7 @@ class ResultVC: UIViewController {
     
     var winner = 0
     var totalSets = 0
-    var myMatch = MatchEntity()
+    var matchEntity = MatchEntity()
     
     var newView = UIView()
     
@@ -184,7 +184,7 @@ class ResultVC: UIViewController {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.05597964376 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i > myMatch.sets.count ? "-" : "\(myMatch.sets[i].games.last?.player1GameScore ?? 0)"
+                label.text = i > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i].games.last?.player1GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = UIColor.white
@@ -192,7 +192,7 @@ class ResultVC: UIViewController {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.15521628498 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i > myMatch.sets.count ? "-" : "\(myMatch.sets[i].games.last?.player2GameScore ?? 0)"
+                label.text = i > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i].games.last?.player2GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = UIColor.white
@@ -244,7 +244,7 @@ class ResultVC: UIViewController {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.05597964376 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i - 1 > myMatch.sets.count ? "-" : "\(myMatch.sets[i - 1].games.last?.player1GameScore ?? 0)"
+                label.text = i - 1 > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i - 1].games.last?.player1GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = UIColor.white
@@ -252,7 +252,7 @@ class ResultVC: UIViewController {
                 
                 label = UILabel()
                 label.frame = CGRect(x: 0.15521628498 * view.frame.width + CGFloat(i * 74), y: 0.85798122065 * view.frame.height, width: 10, height: 20)
-                label.text = i - 1 > myMatch.sets.count ? "-" : "\(myMatch.sets[i - 1].games.last?.player2GameScore ?? 0)"
+                label.text = i - 1 > matchEntity.sets.count ? "-" : "\(matchEntity.sets[i - 1].games.last?.player2GameScore ?? 0)"
                 label.font = UIFont(name: "PASTI", size: 18)
                 label.textAlignment = .left
                 label.textColor = UIColor.white
@@ -289,7 +289,7 @@ class ResultVC: UIViewController {
     
     @objc func saveTapped() {
         try! realm.write {
-            realm.add(myMatch)
+            realm.add(matchEntity)
         }
         delegate?.changeButton()
         dismiss(animated: true, completion: nil)
