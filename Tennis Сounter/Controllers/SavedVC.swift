@@ -43,6 +43,7 @@ class SavedVC: UIViewController {
     
     func drawShit() {
         let scrollView = UIScrollView()
+        scrollView.contentSize = view.frame.size
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.1 * view.frame.height).isActive = true

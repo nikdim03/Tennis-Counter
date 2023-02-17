@@ -94,14 +94,14 @@ class ResultVC: UIViewController {
         button.addTarget(self, action: #selector(startOver), for: .touchUpInside)
         view.addSubview(button)
         
-        let vieww = UIView(frame: CGRect(x: 0.33333333333 * view.frame.width, y: 0.90375586854 * view.frame.height, width: 128.33, height: 35))
-        vieww.backgroundColor = UIColor(red: 0.11, green: 1, blue: 1, alpha: 1)
-        vieww.layer.borderWidth = 1
-        vieww.layer.borderColor = UIColor.white.cgColor
-        vieww.layer.cornerRadius = 17
-        vieww.clipsToBounds = true
-        vieww.layer.masksToBounds = true
-        view.addSubview(vieww)
+        bubble = UIView(frame: CGRect(x: 0.33333333333 * view.frame.width, y: 0.90375586854 * view.frame.height, width: 128.33, height: 35))
+        bubble.backgroundColor = UIColor(red: 0.11, green: 1, blue: 1, alpha: 1)
+        bubble.layer.borderWidth = 1
+        bubble.layer.borderColor = UIColor.white.cgColor
+        bubble.layer.cornerRadius = 17
+        bubble.clipsToBounds = true
+        bubble.layer.masksToBounds = true
+        view.addSubview(bubble)
         
         
         fiveSetsButton = UIButton(type: .custom)

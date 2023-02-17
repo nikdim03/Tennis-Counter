@@ -9,7 +9,6 @@ import UIKit
 import RealmSwift
 
 protocol MainVCDelegate: AnyObject {
-    func startOver2()
     func changeButton()
 }
 
@@ -45,7 +44,7 @@ class MainVC: UIViewController, MainVCDelegate {
     var player2GameScore = 0
     var player1Points = 0
     var player2Points = 0
-    var totalSets = 5
+    var totalSets = 0
     var curGame = 1
     var curSet = 0
     var player1Advantage = false
@@ -64,8 +63,8 @@ class MainVC: UIViewController, MainVCDelegate {
     @available(iOS, deprecated: 15.0, message: "To silence the warnings")
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
         hapticFeedbackOn = defaults.bool(forKey: "hapticFeedbackOn")
+        totalSets = defaults.integer(forKey: "totalSets") == 0 ? 5 : defaults.integer(forKey: "totalSets")
         rotateOn = defaults.bool(forKey: "rotateOn")
         //1
         topView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.frame.height * 0.40962441314)
@@ -315,10 +314,15 @@ class MainVC: UIViewController, MainVCDelegate {
         threeSetButton.addTarget(self, action: #selector(threeSetButtonTapped), for: .touchUpInside)
         self.view.addSubview(threeSetButton)
         
-        fiveSetButtonTapped()
+        if totalSets == 3 {
+            threeSetButtonTapped()
+        } else {
+            fiveSetButtonTapped()
+        }
     }
     
     @objc func fiveSetButtonTapped() {
+        defaults.set(5, forKey: "totalSets")
         totalSets = 5
         if fiveSetButton.isSelected && !threeSetButton.isSelected {
             changed = false
@@ -335,9 +339,6 @@ class MainVC: UIViewController, MainVCDelegate {
         threeSetButton.backgroundColor = UIColor(red: 31/255, green: 255/255, blue: 255/255, alpha: 1)
         
         if changed {
-            if hapticFeedbackOn {
-                generator.notificationOccurred(.success)
-            }
             curGame = 0
             player1Points = 0
             player1GameScore = 0
@@ -357,6 +358,9 @@ class MainVC: UIViewController, MainVCDelegate {
             setEntity = SetEntity()
             gameEntity = GameEntity()
             if !isFirstTime {
+                if hapticFeedbackOn {
+                    generator.notificationOccurred(.success)
+                }
                 for _ in 1...18 {
                     view.subviews[view.subviews.count - 1].removeFromSuperview()
                 }
@@ -416,6 +420,7 @@ class MainVC: UIViewController, MainVCDelegate {
     }
     
     @objc func threeSetButtonTapped() {
+        defaults.set(3, forKey: "totalSets")
         totalSets = 3
         if !fiveSetButton.isSelected && threeSetButton.isSelected {
             changed = false
@@ -432,9 +437,6 @@ class MainVC: UIViewController, MainVCDelegate {
         fiveSetButton.backgroundColor = UIColor(red: 31/255, green: 255/255, blue: 255/255, alpha: 1)
         
         if changed {
-            if hapticFeedbackOn {
-                generator.notificationOccurred(.success)
-            }
             curGame = 0
             player1Points = 0
             player1GameScore = 0
@@ -453,9 +455,15 @@ class MainVC: UIViewController, MainVCDelegate {
             matchEntity.time = dateFormatter.string(from: Date())
             setEntity = SetEntity()
             gameEntity = GameEntity()
-            for _ in 1...30 {
-                view.subviews[view.subviews.count - 1].removeFromSuperview()
+            if !isFirstTime {
+                if hapticFeedbackOn {
+                    generator.notificationOccurred(.success)
+                }
+                for _ in 1...30 {
+                    view.subviews[view.subviews.count - 1].removeFromSuperview()
+                }
             }
+            isFirstTime = false
             for i in 1..<4 {
                 let view1 = UIView()
                 view1.frame = CGRect(x: 0.03053435114 * view.frame.width + CGFloat(74 * i), y: 0.81220657277 * view.frame.height, width: 70, height: 60)
@@ -1031,11 +1039,7 @@ class MainVC: UIViewController, MainVCDelegate {
         gameEntity = GameEntity()
         redraw()
     }
-    
-    func startOver2() {
-        startOver()
-    }
-    
+        
     func changeButton() {
         nextSetButton.setTitle("NEXT SET", for: .normal)
         startOver()

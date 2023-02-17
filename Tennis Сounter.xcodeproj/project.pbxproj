@@ -19,6 +19,8 @@
 		2CB517FB299E630400A3D6DE /* MatchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517FA299E630400A3D6DE /* MatchEntity.swift */; };
 		2CB517FE299E941500A3D6DE /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2CB517FD299E941500A3D6DE /* RealmSwift */; };
 		2CB51800299EB3DF00A3D6DE /* SavedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */; };
+		2CB51803299F3AAD00A3D6DE /* SetEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51802299F3AAD00A3D6DE /* SetEntity.swift */; };
+		2CB51805299F3ADB00A3D6DE /* GameEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB51804299F3ADB00A3D6DE /* GameEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HEEBO.ttf; sourceTree = "<group>"; };
 		2CB517FA299E630400A3D6DE /* MatchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchEntity.swift; sourceTree = "<group>"; };
 		2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedVC.swift; sourceTree = "<group>"; };
+		2CB51802299F3AAD00A3D6DE /* SetEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEntity.swift; sourceTree = "<group>"; };
+		2CB51804299F3ADB00A3D6DE /* GameEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				2CB517DB299CC66F00A3D6DE /* Tennis Сounter */,
-				2CB517F0299CD32700A3D6DE /* PASTI.otf */,
-				2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */,
 				2CB517DA299CC66F00A3D6DE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,16 +74,44 @@
 			children = (
 				2CB517DC299CC66F00A3D6DE /* AppDelegate.swift */,
 				2CB517DE299CC66F00A3D6DE /* SceneDelegate.swift */,
-				2CB517E0299CC66F00A3D6DE /* MainVC.swift */,
-				2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */,
-				2CB517F2299D2A8700A3D6DE /* ResultVC.swift */,
-				2CB517F4299D3E8400A3D6DE /* SettVC.swift */,
-				2CB517FA299E630400A3D6DE /* MatchEntity.swift */,
+				2CB51807299F3B3400A3D6DE /* Controllers */,
+				2CB51806299F3B0F00A3D6DE /* Entities */,
+				2CB51801299F3A1D00A3D6DE /* Fonts */,
 				2CB517E5299CC67000A3D6DE /* Assets.xcassets */,
 				2CB517E7299CC67000A3D6DE /* LaunchScreen.storyboard */,
 				2CB517EA299CC67000A3D6DE /* Info.plist */,
 			);
 			path = "Tennis Сounter";
+			sourceTree = "<group>";
+		};
+		2CB51801299F3A1D00A3D6DE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				2CB517F8299D4D2600A3D6DE /* HEEBO.ttf */,
+				2CB517F0299CD32700A3D6DE /* PASTI.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		2CB51806299F3B0F00A3D6DE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				2CB517FA299E630400A3D6DE /* MatchEntity.swift */,
+				2CB51802299F3AAD00A3D6DE /* SetEntity.swift */,
+				2CB51804299F3ADB00A3D6DE /* GameEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2CB51807299F3B3400A3D6DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CB517E0299CC66F00A3D6DE /* MainVC.swift */,
+				2CB517FF299EB3DF00A3D6DE /* SavedVC.swift */,
+				2CB517F2299D2A8700A3D6DE /* ResultVC.swift */,
+				2CB517F4299D3E8400A3D6DE /* SettVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +195,8 @@
 				2CB517E1299CC66F00A3D6DE /* MainVC.swift in Sources */,
 				2CB517F5299D3E8400A3D6DE /* SettVC.swift in Sources */,
 				2CB517F3299D2A8700A3D6DE /* ResultVC.swift in Sources */,
+				2CB51803299F3AAD00A3D6DE /* SetEntity.swift in Sources */,
+				2CB51805299F3ADB00A3D6DE /* GameEntity.swift in Sources */,
 				2CB517DD299CC66F00A3D6DE /* AppDelegate.swift in Sources */,
 				2CB51800299EB3DF00A3D6DE /* SavedVC.swift in Sources */,
 				2CB517DF299CC66F00A3D6DE /* SceneDelegate.swift in Sources */,
@@ -312,8 +344,8 @@
 				INFOPLIST_FILE = "Tennis Сounter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,8 +371,8 @@
 				INFOPLIST_FILE = "Tennis Сounter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
